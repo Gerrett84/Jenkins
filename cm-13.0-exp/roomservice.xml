@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="ashishkotnala29/android_device_xiaomi_dior" path="device/xiaomi/dior" revision="cm-13.0-exp" />
+  <project name="ashishkotnala29/proprietary_vendor_xiaomi" path="vendor/xiaomi" revision="cm-13.0-exp" />
+  <project name="ashishkotnala29/android_kernel_xiaomi_dior" path="kernel/xiaomi/dior" revision="cm-13.0-exp"/>
+  <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" />
+  <project name="audahadi/uber-arm-eabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-linux-eabi-UB-4.9" revision="master" />
+  <project name="audahadi/uber-arm-linux-androideabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-UB-4.9" revision="master" />
+</manifest>
