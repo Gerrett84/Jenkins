@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="AICP/device_xiaomi_dior" path="device/xiaomi/dior" remote="github" revision="n7.1" />
+</manifest>
