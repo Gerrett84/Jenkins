@@ -1,0 +1,26 @@
+--- ../vendor/aicp/configs/common_versions.mk	2016-12-08 16:59:54.972904013 +0100
++++ ../vendor/aicp/configs/common_versions.mk	2016-12-08 16:45:08.383285521 +0100
+@@ -21,16 +21,19 @@ endif
+ 
+ ifdef AICP_BUILDTYPE
+     ifeq ($(AICP_BUILDTYPE), RELEASE)
+-       AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-RELEASE-$(shell date -u +%Y%m%d)
++       AICP_VERSION := aicp-$(AICP_BRANCH)-$(VERSION)-$(shell date -u +%Y%m%d)-RELEASE-$(AICP_EXTRAVERSION)-dior
+     endif
+     ifeq ($(AICP_BUILDTYPE), NIGHTLY)
+-        AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-NIGHTLY-$(shell date -u +%Y%m%d)
++        AICP_VERSION := aicp-$(AICP_BRANCH)-$(VERSION)-$(shell date -u +%Y%m%d)-NIGHTLY-$(AICP_EXTRAVERSION)-dior
+     endif
+     ifeq ($(AICP_BUILDTYPE), EXPERIMENTAL)
+-        AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-EXPERIMENTAL-$(shell date -u +%Y%m%d)
++        AICP_VERSION := aicp-$(AICP_BRANCH)-$(VERSION)-$(shell date -u +%Y%m%d)-EXPERIMENTAL-$(AICP_EXTRAVERSION)-dior
+     endif
+     ifeq ($(AICP_BUILDTYPE), UNOFFICIAL)
+-        AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-UNOFFICIAL-$(shell date -u +%Y%m%d)
++        AICP_VERSION := aicp-$(AICP_BRANCH)-$(VERSION)-$(shell date -u +%Y%m%d)-UNOFFICIAL-$(AICP_EXTRAVERSION)-dior
++    endif
++    ifeq ($(AICP_BUILDTYPE), WEEKLY)
++        AICP_VERSION := aicp-$(AICP_BRANCH)-$(VERSION)-$(shell date -u +%Y%m%d)-WEEKLY-$(AICP_EXTRAVERSION)-dior
+     endif
+ else
+ #We reset back to UNOFFICIAL
