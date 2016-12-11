@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="Gerrett84/android_device_xiaomi_dior" path="device/xiaomi/dior" remote="github" revision="android-7.1" />
+  <project name="Omnirom/android_device_qcom_caf-sepolicy" path="device/qcom/sepolicy" remote="github" revision="android-7.1" />
+</manifest>
