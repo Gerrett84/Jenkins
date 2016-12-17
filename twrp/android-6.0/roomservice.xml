@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="Gerrett84/android_device_xiaomi_dior" path="device/xiaomi/dior" remote="github" revision="android-6.0" />
+  <project name="ashishkotnala29/android_device_xiaomi_dior" path="device/xiaomi/dior" remote="github" revision="twrp-android-6.0" />
 </manifest>
