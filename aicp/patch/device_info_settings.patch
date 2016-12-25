@@ -1,0 +1,35 @@
+--- ../packages/apps/Settings/res/xml/device_info_settings.xml	2016-12-10 22:16:22.850305844 +0100
++++ ../packages/apps/Settings/res/xml/device_info_settings.xml	2016-12-13 21:28:03.425609966 +0100
+@@ -24,6 +24,32 @@
+                 android:enabled="false"
+                 android:layout="@layout/aicp_logo_rom" />
+ 
++         <!-- System update settings - launches activity -->
++        <PreferenceScreen android:key="system_update_settings"
++                android:title="@string/system_update_settings_list_item_title"
++                android:summary="@string/system_update_settings_list_item_summary">
++            <intent android:action="android.settings.SYSTEM_UPDATE_SETTINGS" />
++        </PreferenceScreen>
++
++
++        <PreferenceScreen android:key="additional_system_update_settings"
++                          android:title="@string/additional_system_update_settings_list_item_title">
++            <intent android:action="android.intent.action.MAIN"
++                    android:targetPackage="@string/additional_system_update"
++                    android:targetClass="@string/additional_system_update_menu" />
++        </PreferenceScreen>
++
++        <!-- CyanogenMod Updates -->
++        <cyanogenmod.preference.SelfRemovingPreference android:key="cm_updates"
++                android:title="AICP-Updates"
++                android:summary="@string/system_update_settings_list_item_summary"
++                cm:requiresOwner="true"
++                cm:requiresPackage="com.cyanogenmod.updater">
++            <intent android:action="android.intent.action.MAIN"
++                    android:targetPackage="com.cyanogenmod.updater"
++                    android:targetClass="com.cyanogenmod.updater.UpdatesSettings" />
++        </cyanogenmod.preference.SelfRemovingPreference>
++
+         <!-- Device status - launches activity -->
+         <PreferenceScreen android:key="status_info"
+                 android:title="@string/device_status"
