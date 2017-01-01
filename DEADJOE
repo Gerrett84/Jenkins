@@ -1,0 +1,30 @@
+
+*** These modified files were found in JOE when it aborted on Sun Dec 11 18:58:18 2016
+*** JOE was aborted by UNIX signal 1
+
+*** Datei '/home/u230555/Jenkins/.git/COMMIT_EDITMSG'
+
+
+# Bitte geben Sie einenn Commitn
+-Beschreibung für Ihre Änderungen ein. Zeilen,
+# die mit '#' beginnen, werden ignoriert, und eine leere Beschreibung
+# bricht den Commit ab.
+# Auf Branch master
+# Ihr Branch ist auf dem selben Stand wie 'origin/master'.
+#
+# zum Commit vorgemerkte Änderungen:
+#	neue Datei:             .htaccess
+#
+
+*** Datei '(Unbenannt)'
+/home/u230555/virgo/android_device_xiaomi_virgo/.git/COMMIT_EDITMSG
+/home/u230555/virgo/android_device_xiaomi_virgo/.git/COMMIT_EDITMSG
+/home/u230555/virgo/android_device_xiaomi_virgo/.git/COMMIT_EDITMSG
+/home/u230555/virgo/android_device_xiaomi_virgo/.git/COMMIT_EDITMSG
+/home/u230555/virgo/android_device_xiaomi_virgo/.git/COMMIT_EDITMSG
+/home/u230555/virgo/android_device_xiaomi_virgo/.git/COMMIT_EDITMSG
+/home/u230555/virgo/android_vendor_xiaomi_virgo/.git/COMMIT_EDITMSG
+/home/u230555/android_device_xiaomi_dior/.git/COMMIT_EDITMSG
+/home/u230555/android_device_xiaomi_dior/.git/COMMIT_EDITMSG
+/home/u230555/Jenkins/.git/MERGE_MSG
+/home/u230555/Jenkins/.git/COMMIT_EDITMSG

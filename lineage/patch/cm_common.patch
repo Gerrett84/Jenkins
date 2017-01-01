@@ -1,0 +1,29 @@
+--- .../vendor/cm/config/common.mk	2016-12-03 21:14:50.164857527 +0100
++++ .../vendor/cm/config/common.mk	2016-12-03 21:19:26.968844282 +0100
+@@ -277,7 +277,7 @@ ifndef CM_BUILDTYPE
+ endif
+ 
+ # Filter out random types, so it'll reset to UNOFFICIAL
+-ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(CM_BUILDTYPE)),)
++ifeq ($(filter RELEASE NIGHTLY SNAPSHOT WEEKLY EXPERIMENTAL,$(CM_BUILDTYPE)),)
+     CM_BUILDTYPE :=
+ endif
+ 
+@@ -285,7 +285,7 @@ ifdef CM_BUILDTYPE
+     ifneq ($(CM_BUILDTYPE), SNAPSHOT)
+         ifdef CM_EXTRAVERSION
+             # Force build type to EXPERIMENTAL
+-            CM_BUILDTYPE := WEEKLY
++            # CM_BUILDTYPE := WEEKLY
+             # Remove leading dash from CM_EXTRAVERSION
+             CM_EXTRAVERSION := $(shell echo $(CM_EXTRAVERSION) | sed 's/-//')
+             # Add leading dash to CM_EXTRAVERSION
+@@ -294,7 +294,7 @@ ifdef CM_BUILDTYPE
+     else
+         ifndef CM_EXTRAVERSION
+             # Force build type to EXPERIMENTAL, SNAPSHOT mandates a tag
+-            CM_BUILDTYPE := WEEKLY
++            # CM_BUILDTYPE := WEEKLY
+         else
+             # Remove leading dash from CM_EXTRAVERSION
+             CM_EXTRAVERSION := $(shell echo $(CM_EXTRAVERSION) | sed 's/-//')

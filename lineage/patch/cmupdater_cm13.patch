@@ -1,0 +1,82 @@
+diff -rup ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java /var/lib/jenkins/CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java
++++ .../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java	2016-09-28 23:30:55.597053734 +0200
+@@ -35,9 +35,11 @@ public class Constants {
+     // Update types
+     public static final int UPDATE_TYPE_SNAPSHOT = 0;
+     public static final int UPDATE_TYPE_NIGHTLY = 1;
++    public static final int UPDATE_TYPE_WEEKLY = 2;
+ 
+     // ro.cm.releasetype values
+     public static final String PROPERTY_CM_RELEASETYPE = "ro.cm.releasetype";
+     public static final String CM_RELEASETYPE_SNAPSHOT = "SNAPSHOT";
+     public static final String CM_RELEASETYPE_NIGHTLY = "NIGHTLY";
++    public static final String CM_RELEASETYPE_WEEKLY = "WEEKLY";
+ }
+diff -rup .../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/UpdateInfo.java .../CMUpdater/src/com/cyanogenmod/updater/misc/UpdateInfo.java
++++ .../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/UpdateInfo.java	2016-09-28 23:30:55.597053734 +0200
+@@ -34,6 +34,7 @@ public class UpdateInfo implements Parce
+         RC,
+         SNAPSHOT,
+         NIGHTLY,
++	WEEKLY,
+         INCREMENTAL
+     };
+     private String mUiName;
+@@ -258,6 +259,8 @@ public class UpdateInfo implements Parce
+                 type = UpdateInfo.Type.SNAPSHOT;
+             } else if (TextUtils.equals(typeString, "nightly")) {
+                 type = UpdateInfo.Type.NIGHTLY;
++            } else if (TextUtils.equals(typeString, "weekly")) {
++                type = UpdateInfo.Type.WEEKLY;
+             } else {
+                 type = UpdateInfo.Type.UNKNOWN;
+             }
+diff -rup .../packages/apps/CMUpdater/src/com/cyanogenmod/updater/service/UpdateCheckService.java .../CMUpdater/src/com/cyanogenmod/updater/service/UpdateCheckService.java
++++ .../packages/apps/CMUpdater/src/com/cyanogenmod/updater/service/UpdateCheckService.java	2016-09-28 23:30:55.597053734 +0200
+@@ -246,6 +246,9 @@ public class UpdateCheckService extends
+             default:
+                 channels.put("nightly");
+                 break;
++            case Constants.UPDATE_TYPE_WEEKLY:
++                channels.put("weekly");
++                break;
+         }
+         JSONObject params = new JSONObject();
+         params.put("device", TESTING_DOWNLOAD ? "cmtestdevice" : Utils.getDeviceType());
+diff -rup .../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettings.java .../CMUpdater/src/com/cyanogenmod/updater/UpdatesSettings.java
++++ .../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettings.java	2016-09-28 23:30:55.597053734 +0200
+@@ -926,6 +926,9 @@ public class UpdatesSettings extends Pre
+         int updateType = Utils.getUpdateType();
+         if (updateType == Constants.UPDATE_TYPE_SNAPSHOT) {
+             cmReleaseType = Constants.CM_RELEASETYPE_SNAPSHOT;
++	}
++        else if (updateType == Constants.UPDATE_TYPE_WEEKLY) {
++            cmReleaseType = Constants.CM_RELEASETYPE_WEEKLY;
+         }
+ 
+         String message = getString(R.string.sysinfo_device) + " " + Utils.getDeviceType() + "\n\n"
+diff -rup .../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettingsTv.java .../CMUpdater/src/com/cyanogenmod/updater/UpdatesSettingsTv.java
++++ .../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettingsTv.java	2016-09-28 23:30:55.597053734 +0200
+@@ -43,6 +43,9 @@ public class UpdatesSettingsTv extends U
+         int updateType = Utils.getUpdateType();
+         if (updateType == Constants.UPDATE_TYPE_SNAPSHOT) {
+             cmReleaseType = Constants.CM_RELEASETYPE_SNAPSHOT;
++	}
++        else if (updateType == Constants.UPDATE_TYPE_WEEKLY) {
++            cmReleaseType = Constants.CM_RELEASETYPE_WEEKLY;
+         }
+         String sysinfomessage = getString(R.string.sysinfo_device) + " " + Utils.getDeviceType() +
+                 "                            " + getString(R.string.sysinfo_running) + " "
+diff -rup .../packages/apps/CMUpdater/src/com/cyanogenmod/updater/utils/Utils.java .../CMUpdater/src/com/cyanogenmod/updater/utils/Utils.java
++++ .../packages/apps/CMUpdater/src/com/cyanogenmod/updater/utils/Utils.java	2016-09-28 23:30:55.597053734 +0200
+@@ -147,6 +147,10 @@ public class Utils {
+                         Constants.CM_RELEASETYPE_SNAPSHOT)) {
+                     updateType = Constants.UPDATE_TYPE_SNAPSHOT;
+                 }
++                if (TextUtils.equals(cmReleaseType,
++                        Constants.CM_RELEASETYPE_WEEKLY)) {
++                    updateType = Constants.UPDATE_TYPE_WEEKLY;
++                }
+             }
+         } catch (RuntimeException ignored) {
+         }
