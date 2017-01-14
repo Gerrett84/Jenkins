@@ -1,7 +1,6 @@
-Binärdateien CMUpdater/.git/index und CMUpdater/.git/index sind verschieden.
-diff -rup CMUpdater/res/values/config.xml CMUpdater/res/values/config.xml
---- ../packages/apps/CMUpdater/res/values/config.xml	2016-12-17 19:45:54.729211171 +0100
-+++ ../packages/apps/CMUpdater/res/values/config.xml	2016-12-17 19:47:42.579971396 +0100
+diff -rup ../packages/apps/CMUpdater/res/values/config.xml ../packages/apps/CMUpdater/res/values/config.xml
+--- ../packages/apps/CMUpdater/res/values/config.xml	2017-01-14 21:18:55.553208738 +0100
++++ ../packages/apps/CMUpdater/res/values/config.xml	2017-01-14 21:18:11.000000000 +0100
 @@ -8,6 +8,6 @@
  -->
  <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -10,103 +9,43 @@ diff -rup CMUpdater/res/values/config.xml CMUpdater/res/values/config.xml
 +    <string name="conf_update_server_url_def" translatable="false">http://aicpota.gerrett84.de/api</string>
      <string name="conf_changelog_url" translatable="false">http://localhost/changelog.xml</string>
  </resources>
-diff -rup CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java
---- ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java	2016-12-17 19:45:54.729211171 +0100
-+++ ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java	2016-12-17 16:52:52.000000000 +0100
+diff -rup ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java
+--- ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java	2017-01-14 21:18:55.553208738 +0100
++++ ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java	2017-01-14 21:12:46.000000000 +0100
 @@ -11,7 +11,7 @@ package com.cyanogenmod.updater.misc;
  
  public class Constants {
      // Download related
--    public static final String UPDATES_FOLDER = "cmupdater";
+-    public static final String UPDATES_FOLDER = "updates";
 +    public static final String UPDATES_FOLDER = "aicpupdater";
      public static final String DOWNLOAD_ID = "download_id";
-     public static final String DOWNLOAD_MD5 = "download_md5";
-     public static final String DOWNLOAD_INCREMENTAL_FOR = "download_incremental_for";
-@@ -35,9 +35,11 @@ public class Constants {
-     // Update types
-     public static final int UPDATE_TYPE_SNAPSHOT = 0;
+ 
+     // Preferences
+@@ -35,7 +35,7 @@ public class Constants {
      public static final int UPDATE_TYPE_NIGHTLY = 1;
-+    public static final int UPDATE_TYPE_EXPERIMENTAL = 2;
  
      // ro.cm.releasetype values
 -    public static final String PROPERTY_CM_RELEASETYPE = "ro.cm.releasetype";
 +    public static final String PROPERTY_CM_RELEASETYPE = "ro.romstats.buildtype";
      public static final String CM_RELEASETYPE_SNAPSHOT = "SNAPSHOT";
      public static final String CM_RELEASETYPE_NIGHTLY = "NIGHTLY";
-+    public static final String CM_RELEASETYPE_EXPERIMENTAL = "EXPERIMENTAL";
  }
-diff -rup CMUpdater/src/com/cyanogenmod/updater/misc/UpdateInfo.java CMUpdater/src/com/cyanogenmod/updater/misc/UpdateInfo.java
---- ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/UpdateInfo.java	2016-12-17 19:45:54.729211171 +0100
-+++ ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/UpdateInfo.java	2016-12-17 16:52:52.000000000 +0100
-@@ -34,6 +34,7 @@ public class UpdateInfo implements Parce
-         RC,
-         SNAPSHOT,
-         NIGHTLY,
-+	EXPERIMENTAL,
-         INCREMENTAL
-     };
-     private String mUiName;
-@@ -258,6 +259,8 @@ public class UpdateInfo implements Parce
-                 type = UpdateInfo.Type.SNAPSHOT;
-             } else if (TextUtils.equals(typeString, "nightly")) {
-                 type = UpdateInfo.Type.NIGHTLY;
-+            } else if (TextUtils.equals(typeString, "experimental")) {
-+                type = UpdateInfo.Type.EXPERIMENTAL;
-             } else {
-                 type = UpdateInfo.Type.UNKNOWN;
-             }
-diff -rup CMUpdater/src/com/cyanogenmod/updater/service/UpdateCheckService.java CMUpdater/src/com/cyanogenmod/updater/service/UpdateCheckService.java
---- ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/service/UpdateCheckService.java	2016-12-17 19:45:54.741211036 +0100
-+++ ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/service/UpdateCheckService.java	2016-12-17 16:52:52.000000000 +0100
-@@ -246,6 +246,9 @@ public class UpdateCheckService extends
-             default:
-                 channels.put("nightly");
-                 break;
-+            case Constants.UPDATE_TYPE_EXPERIMENTAL:
-+                channels.put("experimental");
-+                break;
-         }
-         JSONObject params = new JSONObject();
-         params.put("device", TESTING_DOWNLOAD ? "cmtestdevice" : Utils.getDeviceType());
-diff -rup CMUpdater/src/com/cyanogenmod/updater/UpdatesSettings.java CMUpdater/src/com/cyanogenmod/updater/UpdatesSettings.java
---- ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettings.java	2016-12-17 19:45:54.729211171 +0100
-+++ ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettings.java	2016-12-17 16:52:52.000000000 +0100
-@@ -633,7 +633,7 @@ public class UpdatesSettings extends Pre
+diff -rup ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettings.java ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettings.java
+--- ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettings.java	2017-01-14 21:18:55.553208738 +0100
++++ ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettings.java	2017-01-14 21:14:17.000000000 +0100
+@@ -596,7 +596,7 @@ public class UpdatesSettings extends Pre
          mUpdatesList.removeAll();
  
          // Convert the installed version name to the associated filename
 -        String installedZip = "cm-" + Utils.getInstalledVersion() + ".zip";
 +        String installedZip = "aicp-" + Utils.getInstalledVersion() + ".zip";
  
-         // Determine installed incremental
-         String installedIncremental = Utils.getIncremental();
-@@ -926,6 +926,9 @@ public class UpdatesSettings extends Pre
-         int updateType = Utils.getUpdateType();
-         if (updateType == Constants.UPDATE_TYPE_SNAPSHOT) {
-             cmReleaseType = Constants.CM_RELEASETYPE_SNAPSHOT;
-+	}
-+        else if (updateType == Constants.UPDATE_TYPE_EXPERIMENTAL) {
-+            cmReleaseType = Constants.CM_RELEASETYPE_EXPERIMENTAL;
-         }
- 
-         String message = getString(R.string.sysinfo_device) + " " + Utils.getDeviceType() + "\n\n"
-diff -rup CMUpdater/src/com/cyanogenmod/updater/UpdatesSettingsTv.java CMUpdater/src/com/cyanogenmod/updater/UpdatesSettingsTv.java
---- ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettingsTv.java	2016-12-17 19:45:54.729211171 +0100
-+++ ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettingsTv.java	2016-12-17 16:52:52.000000000 +0100
-@@ -43,6 +43,9 @@ public class UpdatesSettingsTv extends U
-         int updateType = Utils.getUpdateType();
-         if (updateType == Constants.UPDATE_TYPE_SNAPSHOT) {
-             cmReleaseType = Constants.CM_RELEASETYPE_SNAPSHOT;
-+	}
-+        else if (updateType == Constants.UPDATE_TYPE_EXPERIMENTAL) {
-+            cmReleaseType = Constants.CM_RELEASETYPE_EXPERIMENTAL;
-         }
-         String sysinfomessage = getString(R.string.sysinfo_device) + " " + Utils.getDeviceType() +
-                 "                            " + getString(R.string.sysinfo_running) + " "
-diff -rup CMUpdater/src/com/cyanogenmod/updater/utils/Utils.java CMUpdater/src/com/cyanogenmod/updater/utils/Utils.java
---- ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/utils/Utils.java	2016-12-17 19:45:54.741211036 +0100
-+++ ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/utils/Utils.java	2016-12-17 16:52:52.000000000 +0100
-@@ -55,11 +55,11 @@ public class Utils {
+         // Convert LinkedList to HashMap, keyed on filename.
+         HashMap<String, UpdateInfo> updatesMap = new HashMap<String, UpdateInfo>();
+diff -rup ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/utils/Utils.java ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/utils/Utils.java
+--- ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/utils/Utils.java	2017-01-14 21:18:55.553208738 +0100
++++ ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/utils/Utils.java	2017-01-14 21:16:29.000000000 +0100
+@@ -54,11 +54,11 @@ public class Utils {
      }
  
      public static String getDeviceType() {
@@ -120,14 +59,3 @@ diff -rup CMUpdater/src/com/cyanogenmod/updater/utils/Utils.java CMUpdater/src/c
      }
  
      public static int getInstalledApiLevel() {
-@@ -147,6 +147,10 @@ public class Utils {
-                         Constants.CM_RELEASETYPE_SNAPSHOT)) {
-                     updateType = Constants.UPDATE_TYPE_SNAPSHOT;
-                 }
-+                if (TextUtils.equals(cmReleaseType,
-+                        Constants.CM_RELEASETYPE_EXPERIMENTAL)) {
-+                    updateType = Constants.UPDATE_TYPE_EXPERIMENTAL;
-+                }
-             }
-         } catch (RuntimeException ignored) {
-         }
