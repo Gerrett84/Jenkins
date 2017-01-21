@@ -7,7 +7,6 @@ diff -rup ../packages/apps/CMUpdater/res/values/config.xml ../packages/apps/CMUp
      <!-- Updater Config Strings -->
 -    <string name="conf_update_server_url_def" translatable="false">https://download.lineageos.org/api</string>
 +    <string name="conf_update_server_url_def" translatable="false">http://aicpota.gerrett84.de/api</string>
-     <string name="conf_changelog_url" translatable="false">http://localhost/changelog.xml</string>
  </resources>
 diff -rup ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java
 --- ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/misc/Constants.java	2017-01-14 21:18:55.553208738 +0100
