@@ -1,7 +1,7 @@
 diff -rup ../packages/apps/CMUpdater/res/values/config.xml ../packages/apps/CMUpdater/res/values/config.xml
 --- ../packages/apps/CMUpdater/res/values/config.xml	2017-01-14 21:18:55.553208738 +0100
 +++ ../packages/apps/CMUpdater/res/values/config.xml	2017-01-14 21:18:11.000000000 +0100
-@@ -8,6 +8,6 @@
+@@ -9,5 +9,5 @@
  -->
  <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
      <!-- Updater Config Strings -->
