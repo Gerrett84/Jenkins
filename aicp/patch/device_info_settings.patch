@@ -19,15 +19,15 @@
 +                    android:targetClass="@string/additional_system_update_menu" />
 +        </PreferenceScreen>
 +
-+        <!-- LineageOS Updates -->
++        <!-- CyanogenMod Updates -->
 +        <cyanogenmod.preference.SelfRemovingPreference android:key="cm_updates"
 +                android:title="AICP-Updates"
 +                android:summary="@string/system_update_settings_list_item_summary"
 +                cm:requiresOwner="true"
-+                cm:requiresPackage="org.lineageos.updater">
++                cm:requiresPackage="com.cyanogenmod.updater">
 +            <intent android:action="android.intent.action.MAIN"
-+                    android:targetPackage="org.lineageos.updater"
-+                    android:targetClass="com.cyanogenmod.updater.UpdatesActivity" />
++                    android:targetPackage="com.cyanogenmod.updater"
++                    android:targetClass="com.cyanogenmod.updater.UpdatesSettings" />
 +        </cyanogenmod.preference.SelfRemovingPreference>
 +
          <!-- Device status - launches activity -->
