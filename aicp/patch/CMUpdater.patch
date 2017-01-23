@@ -36,7 +36,7 @@ diff -rup ../packages/apps/CMUpdater/src/com/cyanogenmod/updater/UpdatesSettings
          mUpdatesList.removeAll();
  
          // Convert the installed version name to the associated filename
--        String installedZip = "lineage-" + Utils.getInstalledVersion() + ".zip";
+-        String installedZip = "cm-" + Utils.getInstalledVersion() + ".zip";
 +        String installedZip = "aicp-" + Utils.getInstalledVersion() + ".zip";
  
          // Convert LinkedList to HashMap, keyed on filename.
