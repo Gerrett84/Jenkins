@@ -3,6 +3,6 @@
   <project name="ashishkotnala29/android_device_xiaomi_dior" path="device/xiaomi/dior" revision="cm-14.1" />
   <project name="ashishkotnala29/proprietary_vendor_xiaomi" path="vendor/xiaomi" revision="cm-14.1" />
   <project name="ashishkotnala29/android_kernel_xiaomi_dior" path="kernel/xiaomi/dior" revision="cm-14.1"/>
-  <project name="TheMuppets/proprietary_vendor_qcom_binaries" path="vendor/qcom/binaries" revision="cm-14.1" />
+  <project name="ashishkotnala29/proprietary_vendor_qcom_binaries" path="vendor/qcom/binaries" revision="cm-14.1" />
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" revision="cm-14.1" />
 </manifest>
