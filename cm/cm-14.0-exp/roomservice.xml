@@ -8,5 +8,5 @@
   <project name="ashishkotnala29/proprietary_vendor_xiaomi" path="vendor/xiaomi" revision="cm-14.0-exp" />
   <project name="ashishkotnala29/android_kernel_xiaomi_dior" path="kernel/xiaomi/dior" revision="cm-14.0-exp"/>
   <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" />
-  <project name="TheMuppets/proprietary_vendor_qcom_binaries" path="vendor/qcom/binaries" remote="ashish" revision="cm-14.0" />
+  <project name="ashishkotnala29/proprietary_vendor_qcom_binaries" path="vendor/qcom/binaries" remote="ashish" revision="cm-14.1" />
 </manifest>
