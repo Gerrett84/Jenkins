@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <project name="Gerrett84/android_device_xiaomi_dior" path="device/xiaomi/dior" remote="github" revision="android-6.0" />
+  <project name="Gerrett84/twrp_android_device_scorpio" path="device/xiaomi/scorpio" remote="github" revision="android-6.0" />
 </manifest>
