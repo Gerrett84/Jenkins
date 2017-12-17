@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <remote name="github" fetch="https://github.com"/>
+   
   <project name="ashishkotnala29/android_device_xiaomi_dior" path="device/xiaomi/dior" remote="github" revision="android-7.1.2_r33" />
   <project name="ashishkotnala29/android_kernel_xiaomi_dior" path="kernel/xiaomi/dior" remote="github" revision="android-7.1.2_r33" />
   <project name="ashishkotnala29/proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="github" revision="cm-14.1" />
+  
   <project name="ashishkotnala29/proprietary_vendor_qcom_binaries" path="vendor/qcom/binaries" remote="github" revision="cm-14.1" />
+  <project name="lineageos/android_device_qcom_common" path="device/qcom/common" remote="github" revision="cm-14.1" />
+  
+  <project name="lineageos/android_vendor_qcom_opensource_cryptfs_hw" path="vendor/qcom/opensource/cryptfs_hw" remote="github" revision="cm-14.1" />  
+
+  <project path="external/ant-wireless/ant_native" name="LineageOS/android_external_ant-wireless_ant_native" remote="github" revision="cm-14.1" />
+  <project path="external/ant-wireless/ant_service" name="LineageOS/android_external_ant-wireless_ant_service" remote="github" revision="cm-14.1" />
+  <project path="external/ant-wireless/antradio-library" name="LineageOS/android_external_ant-wireless_antradio-library" remote="github" revision="cm-14.1" />
+
+  <remove-project path="hardware/qcom/audio/" name="platform/hardware/qcom/audio" />
+  
+  <remove-project path="system/vold" name="platform/system/vold" />
+  <project name="AOSP-CAF/platform_system_vold" path="system/vold" remote="github" revision="n-mr2" />
+  
+  <remove-project path="system/core" name="platform/system/core" />
+  <project name="AOSP-CAF/platform_system_core" path="system/core" remote="github" revision="n-mr2" />
+
+  <remove-project path="system/extras" name="platform/system/extras" />
+  <project name="AOSP-CAF/platform_system_extras" path="system/extras" remote="github" revision="n-mr2" />
+  
+  <remove-project path="external/f2fs-tools" name="platform/external/f2fs-tools" />
+  <project name="AOSP-CAF/platform_external_f2fs-tools" path="external/f2fs-tools" remote="github" revision="n-mr2" />
+  
+  <remove-project path="external/toybox" name="platform/external/toybox" />
+  <project name="AOSP-CAF/platform_external_toybox" path="external/toybox" remote="github" revision="n-mr2" />
+  
+  <remove-project path="hardware/qcom/display" name="platform/hardware/qcom/display" />
+  <project name="faheemkamal/platform_hardware_qcom_display" path="hardware/qcom/display" remote="github" revision="n-mr2" />
+  
+  <remove-project path="hardware/libhardware" name="platform/hardware/libhardware" />
+  <project name="AOSP-CAF/platform_hardware_libhardware" path="hardware/libhardware" remote="github" revision="n-mr2" />
+  
+  <remove-project path="system/bt" name="platform/system/bt" />
+  <project name="LineageOS/android_system_bt" path="system/bt" remote="github" revision="cm-14.1" />  
+  <remove-project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" />
 </manifest>

@@ -2,7 +2,27 @@
 <manifest>
   <project name="ashishkotnala29/android_device_xiaomi_dior" path="device/xiaomi/dior" revision="lineage-15.0" />
   <project name="ashishkotnala29/proprietary_vendor_xiaomi" path="vendor/xiaomi" revision="lineage-15.0" />
-  <project name="ashishkotnala29/android_kernel_xiaomi_dior" path="kernel/xiaomi/dior" revision="lineage-15.0"/>
+  <project name="faheemkamal/android_kernel_xiaomi_dior" path="kernel/xiaomi/dior" revision="lineage-15.0-arm"/>
+  
   <project name="ashishkotnala29/proprietary_vendor_qcom_binaries" path="vendor/qcom/binaries" revision="lineage-15.0" />
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" revision="lineage-15.0" />
+  <project name="lineageos/android_device_qcom_common" path="device/qcom/common" revision="lineage-15.0" />
+  
+  <remove-project path="vendor/lineage" name="LineageOS/android_vendor_lineage" />
+  <project name="faheemkamal/android_vendor_lineage" path="vendor/lineage" revision="lineage-15.0" />
+  
+  <remove-project path="hardware/qcom/audio/default" name="LineageOS/android_hardware_qcom_audio" />
+  <project name="faheemkamal/android_hardware_qcom_audio" path="hardware/qcom/audio/default" revision="lineage-15.0" />
+
+  <remove-project path="build" name="LineageOS/android_build" />
+  <project name="faheemkamal/android_build" path="build" revision="lineage-15.0" />
+  
+  <remove-project path="system/sepolicy" name="LineageOS/android_system_sepolicy" />
+  <project name="faheemkamal/android_system_sepolicy" path="system/sepolicy" revision="lineage-15.0" />
+  
+  <remove-project path="device/qcom/sepolicy" name="LineageOS/android_device_qcom_sepolicy" />
+  <project name="faheemkamal/android_device_qcom_sepolicy" path="device/qcom/sepolicy" revision="lineage-15.0" />
+  
+  <remove-project path="hardware/qcom/keymaster" name="LineageOS/android_hardware_qcom_keymaster" />
+  <project name="faheemkamal/android_hardware_qcom_keymaster" path="hardware/qcom/keymaster" revision="lineage-15.0" />
 </manifest>
