@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="Gerrett84/android_device_xiaomi_dior" path="device/xiaomi/dior" remote="github" revision="android-8.0" />
+  <project name="Gerrett84/twrp_android_device_scorpio" path="device/xiaomi/scorpio" remote="github" revision="android-7.1" />
+  <project name="Omnirom/android_device_qcom_caf-sepolicy" path="device/qcom/sepolicy" remote="github" revision="android-8.0" />
+
+  <remove-project name="platform/bootable/recovery" path="bootable/recovery" />
+  <project name="Omnirom/android_bootable_recovery" path="bootable/recovery" remote="github" revision="android-8.0" />
+  
+  <project name="Omnirom/android_external_busybox" path="external/busybox" remote="github" revision="android-8.0" /> 
+  
+</manifest>
