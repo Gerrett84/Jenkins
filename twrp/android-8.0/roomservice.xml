@@ -5,7 +5,7 @@
   <project name="Omnirom/android_device_qcom_caf-sepolicy" path="device/qcom/sepolicy" remote="github" revision="android-8.0" />
 
   <remove-project name="platform/bootable/recovery" path="bootable/recovery" />
-  <project name="Omnirom/android_bootable_recovery" path="bootable/recovery" remote="github" revision="android-8.0" />
+  <project name="Omnirom/android_bootable_recovery" path="bootable/recovery" remote="github" revision="android-8.1" />
   
   <project name="Omnirom/android_external_busybox" path="external/busybox" remote="github" revision="android-8.0" /> 
   
