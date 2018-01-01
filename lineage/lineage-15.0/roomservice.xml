@@ -7,9 +7,6 @@
   <project name="ashishkotnala29/proprietary_vendor_qcom_binaries" path="vendor/qcom/binaries" revision="lineage-15.0" />
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" revision="lineage-15.0" />
   <project name="lineageos/android_device_qcom_common" path="device/qcom/common" revision="lineage-15.0" />
-  
-  <remove-project name="LineageOS/android_hardware_qcom_audio" path="hardware/qcom/audio/default" />
-  <project name="faheemkamal/android_hardware_qcom_audio" path="hardware/qcom/audio/default" revision="lineage-15.0" />
 
   <remove-project name="LineageOS/android_build" path="build" />
   <project name="faheemkamal/android_build" path="build" revision="lineage-15.0" />
