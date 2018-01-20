@@ -20,7 +20,6 @@
   
   
 
-  <remove-project path="bionic" name="LineageOS/android_bionic" groups="pdk" />
   <remove-project path="frameworks/av" name="LineageOS/android_frameworks_av" groups="pdk" />
   <remove-project path="frameworks/native" name="LineageOS/android_frameworks_native" groups="pdk" />
   <remove-project path="packages/services/Telephony" name="LineageOS/android_packages_services_Telephony" groups="pdk" />
@@ -30,7 +29,6 @@
   <remove-project path="system/qcom" name="LineageOS/android_system_qcom" groups="pdk" />
   <remove-project path="vendor/lineage" name="LineageOS/android_vendor_lineage" groups="pdk" />
   
-  <project path="bionic" name="oreo-armani/android_bionic" revision="lineage-15.0" remote="github"/>
   <project path="frameworks/av" name="oreo-armani/android_frameworks_av" revision="lineage-15.0" remote="github"/>
   <project path="frameworks/native" name="oreo-armani/android_frameworks_native" revision="lineage-15.0" remote="github"/>
   <project path="packages/services/Telephony" name="oreo-armani/android_packages_services_Telephony" revision="lineage-15.0" remote="github"/>
