@@ -17,25 +17,4 @@
   <remove-project path="hardware/qcom/keymaster" name="LineageOS/android_hardware_qcom_keymaster" groups="qcom,qcom_keymaster,pdk" />
   <project path="hardware/qcom/keymaster" name="oreo-armani/android_hardware_qcom_keymaster" revision="lineage-15.0" remote="github" />
   
-  
-  
-
-  <remove-project path="frameworks/av" name="LineageOS/android_frameworks_av" groups="pdk" />
-  <remove-project path="frameworks/native" name="LineageOS/android_frameworks_native" groups="pdk" />
-  <remove-project path="packages/services/Telephony" name="LineageOS/android_packages_services_Telephony" groups="pdk" />
-  <remove-project path="hardware/lineage/interfaces" name="LineageOS/android_hardware_lineage_interfaces" />
-  <remove-project path="system/core" name="LineageOS/android_system_core" groups="pdk" />
-  <remove-project path="system/sepolicy" name="LineageOS/android_system_sepolicy" groups="pdk" />
-  <remove-project path="system/qcom" name="LineageOS/android_system_qcom" groups="pdk" />
-  <remove-project path="vendor/lineage" name="LineageOS/android_vendor_lineage" groups="pdk" />
-  
-  <project path="frameworks/av" name="oreo-armani/android_frameworks_av" revision="lineage-15.0" remote="github"/>
-  <project path="frameworks/native" name="oreo-armani/android_frameworks_native" revision="lineage-15.0" remote="github"/>
-  <project path="packages/services/Telephony" name="oreo-armani/android_packages_services_Telephony" revision="lineage-15.0" remote="github"/>
-  <project path="hardware/lineage/interfaces" name="oreo-armani/android_hardware_lineage_interfaces" revision="lineage-15.0" remote="github"/>
-  <project path="system/core" name="oreo-armani/android_system_core" revision="lineage-15.0" remote="github"/>
-  <project path="system/qcom" name="oreo-armani/android_system_qcom" revision="lineage-15.0" remote="github"/>
-  <project path="system/sepolicy" name="oreo-armani/android_system_sepolicy" revision="lineage-15.0" remote="github"/>
-  <project path="vendor/lineage" name="oreo-armani/android_vendor_lineage" revision="lineage-15.0" remote="github"/>
-   
 </manifest>
