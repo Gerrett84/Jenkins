@@ -17,7 +17,7 @@
   <remove-project path="hardware/qcom/keymaster" name="LineageOS/android_hardware_qcom_keymaster" groups="qcom,qcom_keymaster,pdk" />
   <project path="hardware/qcom/keymaster" name="oreo-armani/android_hardware_qcom_keymaster" revision="lineage-15.0" remote="github" />
 
-  <remove-project path="hardware/qcom/bt" name="LineageOS/android_system_bt" />
-  <project path="hardware/qcom/bt" name="faheemkamal/android_system_bt" revision="lineage-15.0" remote="github" />
+  <remove-project path="system/bt" name="LineageOS/android_system_bt" />
+  <project path="system/bt" name="faheemkamal/android_system_bt" revision="lineage-15.0" remote="github" />
     
 </manifest>
