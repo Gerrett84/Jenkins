@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="faheemkamal/android_device_xiaomi_dior-1" path="device/xiaomi/dior" revision="lineage-15.1" />
+  <project name="faheemkamal/android_device_xiaomi_dior-1" path="device/xiaomi/dior" revision="cm-15.1" />
   <project name="faheemkamal/android_vendor_xiaomi_dior-1" path="vendor/xiaomi/dior" revision="lineage-15.1" />
   <project name="faheemkamal/android_kernel_xiaomi_dior-1" path="kernel/xiaomi/dior" revision="lineage-15.1"/>
   
