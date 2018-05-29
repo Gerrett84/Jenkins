@@ -8,4 +8,7 @@
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" revision="lineage-15.1" />
   <project name="lineageos/android_device_qcom_common" path="device/qcom/common" revision="lineage-15.1" />
   
+  <remove-project name="LineageOS/android_build" path="build" />
+  <project name="faheemkamal/android_build" path="build" revision="lineage-15.1" />
+  
 </manifest>
